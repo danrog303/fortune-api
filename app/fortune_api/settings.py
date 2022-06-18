@@ -28,7 +28,9 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
     "fortune_triggers",
-    "fortune_models"
+    "fortune_models",
+    "fortune_admin",
+    "fortune_prepopulate"
 ]
 
 MIDDLEWARE = [
