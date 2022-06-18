@@ -24,9 +24,9 @@ Optionally, you can use **python3 manage.py prepopulate** command. This is a cus
 - __Fortune pool__:  
   a single pool storing text+image pairs, the pool could be for example "Albert Einstein quotes" or "cat jokes";  
 - __Fortune image__:  
-  the image that is displayed next to the quote (one image can be used by multiple pools and multiple entries simultaneously)  
+  an image that is displayed next to the quote (one image can be used by multiple pools and multiple entries simultaneously); fortune-api requires all images to be in JPEG format  
 - __Fortune trigger__:  
-  the moment in time when a given group of fortune entries should be displayed (for example: "today is Christmas" or "it's nighttime")  
+  a moment in time when a given group of fortune entries should be displayed (for example: "today is Christmas" or "it's nighttime")  
 - __Fortune entry__:  
   some image and text to be displayed, paired with a trigger and related pool  
 
@@ -75,3 +75,5 @@ print(response.json())
 When you connect to **/api/**, server will list all existing *public* fortune pools. It is also possible to define non-public pools: then they will not be listed, and to read them you will need to know their name.
 
 When you connect to **/api/pool/pool-name/**, the server will find the pool with the specified name and then will find the correct trigger. When both trigger and pool will be found, the server will retrieve random fortune entry from the database (with corresponding pool and trigger). When multiple users connect to the database, they will receive the same fortune entry each time - retrieved fortune entry refreshes only after some time. Each pool separately defines the time after which a random fortune entry must be refreshed.
+
+Image url (**/media/imagekey.jpg/**) can be accessed only when there is at least one fortune pool, which currently returns it after calling **/api/pool/pool-name/** - otherwise image url will return *403 Forbidden* error.
