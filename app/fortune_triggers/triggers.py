@@ -1,5 +1,4 @@
 from dateutil.easter import easter
-from random import randrange
 from .triggers_base import BaseFortuneTriggers
 
 
@@ -18,7 +17,7 @@ class FortuneTriggers(BaseFortuneTriggers):
         return kwargs["day"] == 31 and kwargs["month"] == 12
 
     def trigger_new_year(self, *args, **kwargs):
-        return kwargs["day"] == 1 and kwargs["moth"] == 1
+        return kwargs["day"] == 1 and kwargs["month"] == 1
 
     def trigger_morning(self, *args, **kwargs):
         return kwargs["hour"] in range(6, 13)
