@@ -1,6 +1,7 @@
 # fortune-api  
 ![https://github.com/danrog303/fortune-api/actions/workflows/ci.yml/badge.svg](https://github.com/danrog303/fortune-api/actions/workflows/ci.yml/badge.svg)
 ![https://shields.io/github/license/danrog303/fortune-api](https://shields.io/github/license/danrog303/fortune-api)
+![Gitmoji](https://img.shields.io/badge/gitmoji-%20📝%20🏗️-FFDD67.svg)
 > Django REST api for obtaining inspiring quotes and images based on the current date.   
 
 ## ✨ Features
@@ -20,14 +21,14 @@ Optionally, you can use **python3 manage.py prepopulate** command. This is a cus
 
 ## 💻 How does it work?
 ### 📝 Glossary  
-__Fortune pool__:  
-a single pool storing text+image pairs, the pool could be for example "Albert Einstein quotes" or "cat jokes";  
-__Fortune image__:  
-the image that is displayed next to the quote (one image can be used by multiple pools and multiple entries simultaneously)  
-__Fortune trigger__:  
-the moment in time when a given group of fortune entries should be displayed (for example: "today is Christmas" or "it's nighttime")  
-__Fortune entry__:  
-some image and text to be displayed, paired with a trigger and related pool  
+- __Fortune pool__:  
+  a single pool storing text+image pairs, the pool could be for example "Albert Einstein quotes" or "cat jokes";  
+- __Fortune image__:  
+  the image that is displayed next to the quote (one image can be used by multiple pools and multiple entries simultaneously)  
+- __Fortune trigger__:  
+  the moment in time when a given group of fortune entries should be displayed (for example: "today is Christmas" or "it's nighttime")  
+- __Fortune entry__:  
+  some image and text to be displayed, paired with a trigger and related pool  
 
 ### 🔖 How to define those things?
 Regular user cannot create new pools, images, triggers nor entries. Only administrators can manage data. Fortune triggers are defined in **fortune_triggers/triggers.py** file. Triggers are basically functions: for example, when there is nighttime, **trigger_night** function will return True - otherwise it will return False.  
