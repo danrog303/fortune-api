@@ -10,7 +10,7 @@ class Command(BaseCommand):
     help = 'Prepopulates fortune_api database with some dummy data.'
 
     pool_data = {
-        "name": "albert-einstein-quoutes",
+        "name": "albert-einstein-quotes",
         "description": "Quotes of Albert Einstein.",
         "entry_expiration_seconds": 5,
         "public": True
